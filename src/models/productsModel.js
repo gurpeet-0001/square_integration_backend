@@ -2,11 +2,6 @@ import mongoose from 'mongoose';
 
 const productSchema = new mongoose.Schema(
   {
-    id: {
-      type: String,
-      required: true,
-      unique: true,
-    },
     square_catalog_id: {
       type: String,
       required: true,
