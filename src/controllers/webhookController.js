@@ -1,0 +1,1 @@
+// Handle POS updates & catalog cache invalidation

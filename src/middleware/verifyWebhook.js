@@ -1,0 +1,1 @@
+// Square HMAC-SHA256 signature verification

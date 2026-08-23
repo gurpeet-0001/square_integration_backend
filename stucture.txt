@@ -1,0 +1,36 @@
+backend/
+├── src/
+│   ├── config/
+│   │   └── square.js               # Base URLs, headers & environment config
+│   │
+│   ├── controllers/
+│   │   ├── catalogController.js    # Fetch & format menu, categories, modifiers
+│   │   ├── checkoutController.js   # Create order + process payment to POS
+│   │   ├── orderController.js      # Order tracking & status lookups
+│   │   └── webhookController.js    # Handle POS updates & catalog cache invalidation
+│   │
+│   ├── routes/
+│   │   ├── catalogRoutes.js        # GET /api/menu
+│   │   ├── checkoutRoutes.js       # POST /api/checkout
+│   │   ├── orderRoutes.js          # GET /api/orders/:id/status
+│   │   └── webhookRoutes.js        # POST /api/webhooks/square
+│   │
+│   ├── services/
+│   │   ├── squareCatalogService.js # Square Catalog API calls & in-memory cache logic
+│   │   ├── squareOrderService.js   # Square Orders API calls & fulfillment payloads
+│   │   └── squarePaymentService.js # Square Payments API calls
+│   │
+│   ├── middleware/
+│   │   ├── validateCheckout.js     # Validates guest inputs, cart items & UK postcodes
+│   │   └── verifyWebhook.js        # Square HMAC-SHA256 signature verification
+│   │
+│   ├── utils/
+│   │   ├── formatCatalog.js        # Transforms flat Square catalog to nested JSON
+│   │   └── calculateTotals.js      # Server-side price calculation in GBP pence
+│   │
+│   ├── app.js                      # Express app setup, middleware, route mounting
+│   └── server.js                   # HTTP server entry point
+│
+├── .env.example                    # Template for Square tokens, location ID, port
+├── .gitignore
+└── package.json

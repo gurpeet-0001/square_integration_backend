@@ -1,0 +1,1 @@
+// Transforms flat Square catalog to nested JSON
